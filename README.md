@@ -87,6 +87,6 @@ in the source test file.
 ### Developers
 - [Arun Prakash Jana](https://github.com/jarun)
 - [Ananya Jana](https://github.com/ananyajana)
-
+- [Alfystar](https://github.com/Alfystar)
 ### Contributions
 Contributions are welcome! We would love to see more data structures and APIs added to `dslib`.
