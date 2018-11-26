@@ -43,7 +43,7 @@ int lockWriteSem(int semId)
 	{
 		switch (errno)
 		{
-			case EINTR:
+			case EINTR: //interrupt occult
 				goto SEM_wantWrite;
 				break;
 			default:
@@ -62,7 +62,7 @@ int lockWriteSem(int semId)
 	{
 		switch (errno)
 		{
-			case EINTR:
+			case EINTR: //interrupt occult
 				goto SEM_waitReaders;
 				break;
 			default:
@@ -80,7 +80,7 @@ int lockWriteSem(int semId)
 	{
 		switch (errno)
 		{
-			case EINTR:
+			case EINTR: //interrupt occult
 				goto SEM_writeWorking;
 				break;
 			default:
@@ -106,7 +106,7 @@ int unlockWriteSem(int semId)
 	{
 		switch (errno)
 		{
-			case EINTR:
+			case EINTR: //interrupt occult
 				goto SEM_writeWorking;
 				break;
 			default:
@@ -124,7 +124,7 @@ int unlockWriteSem(int semId)
 	{
 		switch (errno)
 		{
-			case EINTR:
+			case EINTR: //interrupt occult
 				goto SEM_wantWrite;
 				break;
 			default:
@@ -153,7 +153,7 @@ int lockReadSem(int semId)
 	{
 		switch (errno)
 		{
-			case EINTR:
+			case EINTR: //interrupt occult
 				goto SEM_wantWrite_readWorking;
 				break;
 			default:
@@ -178,7 +178,7 @@ int unlockReadSem(int semId)
 	{
 		switch (errno)
 		{
-			case EINTR:
+			case EINTR: //interrupt occult
 				goto SEM_readWorking;
 				break;
 			default:

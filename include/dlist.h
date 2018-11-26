@@ -49,3 +49,46 @@ int destroy_dlist(dlist_pp head);
 
 /* Count total nodes in list */
 int count_nodes_dlist(dlist_pp head);
+
+/* Print double-linked list*/
+void print_dlist(dlist_pp head, char *printData(const void *, char *, int));
+char *print_dlistNode(dlist_p node, int index, char* bufOut, char *printData(const void *, char *, int));
+
+/*==========================================================*/
+/*=================== Thread safe Metod ====================*/
+/*==========================================================*/
+
+typedef struct listHead_S_{
+	dlist_pp head;
+	int semId;
+} listHead_S, *listHead_S_p;
+
+/* Setup semapore and create empty list SAFE*/
+int init_listHead_S (listHead_S_p head);
+
+/* Add node at head of list SAFE*/
+int add_head_dlist_S (listHead_S_p head, dlist_p node);
+
+/* Get the head of list SAFE*/
+void *get_head_dlist_S (listHead_S_p head);
+
+/* Get the tail of list SAFE*/
+void *get_tail_dlist_S (listHead_S_p head);
+
+/* Delete the head of list SAFE*/
+int delete_head_dlist_S (listHead_S_p head);
+
+/* Delete the tail of list SAFE*/
+int delete_tail_dlist_S (listHead_S_p head);
+
+/* Clean up list SAFE*/
+int destroy_dlist_S (listHead_S_p head);
+
+/* Count total nodes in list SAFE*/
+int count_nodes_dlist_S (listHead_S_p head);
+
+/* Delete specific node in list SAFE*/
+int deleteNodeFromList (listHead_S_p head, dlist_p nodeDel);
+
+/* Print double-linked list SAFE*/
+void print_dlist_S(listHead_S_p head, char *printData(const void *, char *, int));

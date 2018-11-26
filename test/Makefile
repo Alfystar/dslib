@@ -10,8 +10,9 @@ all:
 	$(CC) $(CFLAGS) $(INCLUDE) -o test_dlist_1 test_dlist_1.c $(LIBS)
 	$(CC) $(CFLAGS) $(INCLUDE) -o test_queue_1 test_queue_1.c $(LIBS)
 	$(CC) $(CFLAGS) $(INCLUDE) -o test_stack_1 test_stack_1.c $(LIBS)
-	$(CC) $(CFLAGS) $(INCLUDE) -o avl_Thread_Safe_Test avl_Thread_Safe_Test.c $(LIBS) -lpthread
+	$(CC) $(CFLAGS) $(INCLUDE) -o test_avl_thSafe test_avl_thSafe.c $(LIBS) -lpthread
+	$(CC) $(CFLAGS) $(INCLUDE) -o test_dlist_thSafe test_dlist_thSafe.c $(LIBS) -lpthread
 
 .PHONY: clean
 clean:
-	rm -f test_avl_1 test_bst_1 test_dlist_1 test_queue_1 test_stack_1
+	rm -f test_avl_1 test_bst_1 test_dlist_1 test_queue_1 test_stack_1 test_avl_thSafe test_dlist_thSafe

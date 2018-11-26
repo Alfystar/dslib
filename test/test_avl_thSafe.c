@@ -46,7 +46,7 @@
 #define nSearch 50
 
 #include <common.h>
-#include "avl.h"
+#include <avl.h>
 
 #include <signal.h>
 #include <stdlib.h>
@@ -56,15 +56,12 @@
 int current_log_level = INFO;
 avl_pp_S head;
 
-int n_nodeInsert;
-int searchRange;
-int writePending;
+int n_nodeInsert, searchRange, writePending;
 
 void searchTh(void *info)
 {
 	int id = *(int *)info;
-	int keySearch;
-	int found;
+	int keySearch, found;
 
 	while (1) {
 		keySearch = (int) random() % searchRange;

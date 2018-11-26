@@ -1,7 +1,10 @@
 # dslib thread-safe version
 
-For now the Thread-Safe mode is implemented only for avl-tree
-But in common.h and common.c there are the lock funx so is very easy extend this property at all other structure
+For now the Thread-Safe mode is implemented for:
+- avl-tree 
+- double-linking-list (dslib)
+
+In common.h and common.c there are the lock funx so is very easy extend this property at all other structure
 
 
 
